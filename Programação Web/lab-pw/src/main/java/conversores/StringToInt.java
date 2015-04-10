@@ -2,7 +2,6 @@ package conversores;
 
 public class StringToInt {
 	public static int toInt(String nome) throws Exception{
-		@SuppressWarnings("unused")
 		int numero = 0;
 		
 		try {
@@ -10,6 +9,6 @@ public class StringToInt {
 		} catch (Exception e) {
 			throw e;
 		}
-		return 0;
+		return numero;
 	}
 }
