@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AcoesProjetos</title>
+<title>Teste de Trabalho em Equipe com o GitHub</title>
 
 <!-- Bibliotecas do Bootstrap e JQuery -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
