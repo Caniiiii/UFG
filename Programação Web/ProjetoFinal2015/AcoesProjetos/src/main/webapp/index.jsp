@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Fiz outra alteração no projeto</title>
+<title>AçõesProjetos</title>
 
 <!-- Bibliotecas do Bootstrap e JQuery -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
