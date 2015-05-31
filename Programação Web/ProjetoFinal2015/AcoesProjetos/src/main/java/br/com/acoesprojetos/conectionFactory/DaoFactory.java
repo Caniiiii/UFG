@@ -29,21 +29,21 @@ public final class DaoFactory {
 		return entityManagerFactoryInstance;
 	}
 	
-	public static AcaoDAO historicoVendaDaoInstance() {
+	public static AcaoDAO acaoDaoInstance() {
 		if(acaoDao == null)
 			acaoDao = new AcaoDAO();
 		
 		return acaoDao;
 	}
 	
-	public static InvestimentoDAO ingressoDaoInstance() {
+	public static InvestimentoDAO investimentoDaoInstance() {
 		if(investimentoDao == null)
 			investimentoDao = new InvestimentoDAO();
 		
 		return investimentoDao;
 	}
 	
-	public static ProjetoDAO setorDaoInstance() {
+	public static ProjetoDAO projetoDaoInstance() {
 		if(projetoDao == null)
 			projetoDao = new ProjetoDAO();
 		
