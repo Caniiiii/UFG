@@ -21,7 +21,7 @@ public class Acao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "aco_id")
-	private long id;
+	private int id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "aco_usr_id", referencedColumnName = "usr_id")
@@ -39,11 +39,11 @@ public class Acao {
 	@Column(name = "aco_preco", precision = 15, scale = 2)
 	private Double preco;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

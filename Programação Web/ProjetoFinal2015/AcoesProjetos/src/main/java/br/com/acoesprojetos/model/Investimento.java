@@ -26,7 +26,7 @@ public class Investimento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "inv_id")
-	private long id;
+	private int id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "inv_aco_id", referencedColumnName = "aco_id")
@@ -48,11 +48,11 @@ public class Investimento {
 	@Column(name = "inv_total", nullable = false, precision = 15, scale = 2)
 	private double total;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

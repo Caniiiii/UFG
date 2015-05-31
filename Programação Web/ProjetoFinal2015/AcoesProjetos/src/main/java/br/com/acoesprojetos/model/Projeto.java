@@ -26,7 +26,7 @@ public class Projeto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "prj_id")
-	private long id;
+	private int id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "prj_usr_id", referencedColumnName = "usr_id")
@@ -61,11 +61,11 @@ public class Projeto {
 	@Column(name = "prj_lucro", precision = 15, scale = 2)
 	private double lucro;
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

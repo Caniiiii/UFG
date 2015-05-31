@@ -23,7 +23,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "usr_id")
-	private long id;
+	private int id;
 	
 	@Column(name = "usr_nome", length = 60, nullable = false)
 	private String nome;
@@ -42,11 +42,11 @@ public class Usuario {
 	private String senha;
 	
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
