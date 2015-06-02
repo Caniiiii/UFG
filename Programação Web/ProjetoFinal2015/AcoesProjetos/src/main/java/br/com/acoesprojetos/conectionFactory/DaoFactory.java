@@ -10,8 +10,8 @@ import br.com.acoesprojetos.dao.UsuarioDAO;
 
 public final class DaoFactory {
 
-	// Trocar aqui para qual banco será usado de acordo com persistence.xml
-	private static final String PERSISTENCE_UNIT_NAME = "postgres";
+	// Trocar aqui para qual banco serï¿½ usado de acordo com persistence.xml
+	private static final String PERSISTENCE_UNIT_NAME = "Derby";
 	private static EntityManagerFactory entityManagerFactoryInstance;
 	
 	private static AcaoDAO acaoDao;

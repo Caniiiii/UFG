@@ -10,7 +10,7 @@ import br.com.acoesprojetos.model.Usuario;
 
 public class UsuarioDAOTest {
 	
-	@Ignore
+//	@Ignore
 	@Test
 	public void salvar() {
 		Usuario user1 = new Usuario();
@@ -45,15 +45,15 @@ public class UsuarioDAOTest {
 	@Test
 	/**
 	 * Passa como parametro um objeto do tipo que for excluido e seu id
-	 * para identificação para a exclusão
-	 * É retornado o objeto excluido populado
+	 * para identificaï¿½ï¿½o para a exclusï¿½o
+	 * ï¿½ retornado o objeto excluido populado
 	 */
 	public void excluir() {
 		 UsuarioDAO dao = new UsuarioDAO();
 		 System.out.println(dao.delete(new Usuario(), 1).getNome());
 	}
 	
-//	@Ignore
+	@Ignore
 	@Test
 	public void editar() {
 		UsuarioDAO dao = new UsuarioDAO();

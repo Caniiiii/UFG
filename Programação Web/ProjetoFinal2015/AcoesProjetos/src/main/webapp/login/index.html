@@ -57,23 +57,27 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                            <form  action="cadastro" autocomplete="on"> 
                                 <h1> Cadastro </h1> 
                                 <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">Nome</label>
+                                    <input id="usernamesignup" name="nome" required="required" type="text"  />
+                                </p>
+                                <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Seu username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text"  />
+                                    <input id="usernamesignup" name="login" required="required" type="text"  />
                                 </p>
                                 <p> 
                                     <label for="emailsignup" class="youmail" data-icon="e" > Seu email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" /> 
+                                    <input id="emailsignup" name="mail" required="required" type="email" /> 
                                 </p>
                                 <p> 
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Sua senha </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password"/>
+                                    <input id="passwordsignup" name="senha" required="required" type="password"/>
                                 </p>
                                 <p> 
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Porfavor repita a senha </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" />
+                                    <input id="passwordsignup_confirm" name="senha_conf" required="required" type="password" />
                                 </p>
                                 <p class="signin button"> 
 									<input type="submit" value="Concluir"/> 

@@ -31,7 +31,7 @@ public class Usuario {
 	@Column(name = "usr_email", length = 100, nullable = false, unique = true)
 	private String email;
 	
-	@Column(name = "usr_datanasc", nullable = false)
+	@Column(name = "usr_datanasc")
 	@Temporal(value = TemporalType.DATE)
 	private Date dataNasc;
 	
