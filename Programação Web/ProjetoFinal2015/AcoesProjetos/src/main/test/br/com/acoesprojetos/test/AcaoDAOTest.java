@@ -6,53 +6,50 @@ import org.junit.Test;
 import br.com.acoesprojetos.dao.AcaoDAO;
 import br.com.acoesprojetos.dao.UsuarioDAO;
 import br.com.acoesprojetos.model.Acao;
-import br.com.acoesprojetos.model.Usuario;
 
 public class AcaoDAOTest {
-	
-	
+
+	@Ignore
 	@Test
-	public void salvar(){
+	public void salvar() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
-		
-		
+
 		Acao acao = new Acao();
-		acao.setUsuario(usuarioDAO.findById((long) 1));
+		acao.setUsuario(usuarioDAO.findById(1));
 		acao.setNome("Petrobras");
-		
+
 		AcaoDAO acaoDAO = new AcaoDAO();
 		acaoDAO.inserir(acao);
 	}
-	
+
 	@Ignore
 	@Test
-	public void listar(){
+	public void listar() {
 		AcaoDAO dao = new AcaoDAO();
-		System.out.println(dao.listar());
+		System.out.println(dao.getLista());
 	}
-	
+
 	@Ignore
 	@Test
-	public void buscarPorCodigo(){
+	public void buscarPorCodigo() {
 		AcaoDAO dao = new AcaoDAO();
-		System.out.println(dao.buscarPorCodigo(1L));
+		System.out.println(dao.findById(1));
 	}
-	
+
 	@Ignore
 	@Test
-	public void excluir(){
+	public void excluir() {
 		AcaoDAO dao = new AcaoDAO();
-		Acao acao = dao.buscarPorCodigo(1L);
-		dao.excluir(acao);
+		dao.delete(new Acao(), 1);
 	}
-	
+
 	@Ignore
 	@Test
-	public void editar(){
+	public void editar() {
 		AcaoDAO acaoDAO = new AcaoDAO();
-		Acao acao = acaoDAO.buscarPorCodigo(1L);
-		
+		Acao acao = new Acao();
+
 		acao.setNome("IBM");
-		acaoDAO.editar(acao);
+		acaoDAO.atualizar(acao);
 	}
 }

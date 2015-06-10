@@ -10,7 +10,7 @@ import br.com.acoesprojetos.model.Usuario;
 
 public class UsuarioDAOTest {
 	
-//	@Ignore
+	@Ignore
 	@Test
 	public void salvar() {
 		Usuario user1 = new Usuario();
@@ -26,7 +26,7 @@ public class UsuarioDAOTest {
 		System.out.println("salvou");
 	}
 
-	@Ignore
+	
 	@Test
 	public void listar() {
 		UsuarioDAO dao = new UsuarioDAO();
