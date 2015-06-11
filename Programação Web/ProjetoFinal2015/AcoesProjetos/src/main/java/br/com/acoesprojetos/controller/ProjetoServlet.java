@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.acoesprojetos.service.UsuarioService;
+import br.com.acoesprojetos.service.ProjetoService;
 
-@WebServlet(name = "CadastroServlet", urlPatterns = "/login/cadastroUsuario")
-public class UsuarioServlet extends HttpServlet {
+@WebServlet(name = "ProjetoServlet", urlPatterns = "/temp/cadastroProjeto")
+public class ProjetoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -20,20 +20,20 @@ public class UsuarioServlet extends HttpServlet {
 
 		try {
 			String operacao = req.getParameter("cadastro");
-			
+			ProjetoService projetoService = new ProjetoService();
+
 			if (operacao.equals("salvar")) {
 				String nome = req.getParameter("nome");
-				String login = req.getParameter("login");
-				String senha = req.getParameter("senha");
-				String email = req.getParameter("mail");
+				String status = req.getParameter("status");
+				String inicio = req.getParameter("inicio");
 
-				UsuarioService usuarioService = new UsuarioService();
-				usuarioService.salvar(nome, login, senha, email);
+				projetoService.salvar(nome, status, inicio);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			req.getRequestDispatcher("/login/index.html").forward(req, resp);
+			req.getRequestDispatcher("/temp/cadastrarAcao.jsp").forward(req,
+					resp);
 		}
 
 	}

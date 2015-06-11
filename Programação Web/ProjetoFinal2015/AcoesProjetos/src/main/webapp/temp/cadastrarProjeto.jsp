@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -37,20 +38,20 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form role="form" method="post" action="cadastroProjeto">
                                         <div class="form-group">
                                             <label>Nome do projeto</label>
-                                            <input class="form-control">                                            
+                                            <input class="form-control" name="nome">                                            
                                         </div>
                                         <div class="form-group">
                                             <label>Data de inicio</label>
-                                            <input class="form-control">                                            
+                                            <input class="form-control" name="inicio" value="<%=new Date()%>">                                            
                                         </div>
                                         <div class="form-group">
-                                            <label>Data de término</label>
-                                            <input class="form-control">                                            
+                                            <label>Status</label>
+                                            <input class="form-control" name="status">                                            
                                         </div>
-                                        <button type="submit" class="btn btn-default">Submit Button</button>                                        
+                                        <button type="submit" class="btn btn-default" name="cadastro" value="salvar">Submit Button</button>                                        
                                     </form>
                                 </div>
                             </div>

@@ -1,13 +1,7 @@
 ----------------------------------------------------------------
-Wed Jun 10 18:05:24 BRT 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-014d-df4a-b3fc-000004ac38c0 
-on database directory C:\Users\Felipe\git\UFG\Programação Web\ProjetoFinal2015\AcoesProjetos\db with class loader WebappClassLoader
-  context: /AcoesProjetos
-  delegate: false
-  repositories:
-----------> Parent Classloader:
-ClassRealm[plugin>org.apache.tomcat.maven:tomcat7-maven-plugin:2.2, parent: sun.misc.Launcher$AppClassLoader@5c647e05]
- 
+Thu Jun 11 17:17:29 BRT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-014d-e445-2e9d-000002f83aa0 
+on database directory C:\Users\Felipe\git\UFG\Programação Web\ProjetoFinal2015\AcoesProjetos\db with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 Loaded from file:/C:/Users/Felipe/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_25-b18

@@ -18,14 +18,14 @@ public class ProjetoDAOTest {
 		ProjetoDAO projetoDAO = new ProjetoDAO();
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		Projeto projeto = new Projeto();
-		Usuario usuario = usuarioDAO.buscarPorCodigo(4L);
+		Usuario usuario = usuarioDAO.findById(1);
 		
 		projeto.setUsuario(usuario);
 		projeto.setNome("Predio");
 		projeto.setStatus(1);
 		projeto.setDataInicio(new Date());
 		
-		projetoDAO.salvar(projeto);
+		projetoDAO.inserir(projeto);
 	}
 	
 	@Ignore
