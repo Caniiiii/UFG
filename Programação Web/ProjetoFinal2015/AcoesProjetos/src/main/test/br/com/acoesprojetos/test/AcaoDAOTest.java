@@ -9,7 +9,6 @@ import br.com.acoesprojetos.model.Acao;
 
 public class AcaoDAOTest {
 
-	@Ignore
 	@Test
 	public void salvar() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();

@@ -7,10 +7,10 @@
                         <a href="index.jsp"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="acoes.jsp"><i class="fa fa-bar-chart-o"></i> Ações</a>
+                        <a href="acao?opcao=listar"><i class="fa fa-bar-chart-o"></i> Ações</a>
                     </li>
 					<li>
-                        <a href="projetos.jsp"><i class="fa fa-table"></i> Projetos</a>
+                        <a href="projetos.jsp?opcao=listar"><i class="fa fa-table"></i> Projetos</a>
                     </li>
                     <li>
                         <a href="sobre.jsp"><i class="fa fa-qrcode"></i> Sobre</a>

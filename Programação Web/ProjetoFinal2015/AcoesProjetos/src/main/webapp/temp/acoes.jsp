@@ -1,6 +1,3 @@
-<%@page import="br.com.acoesprojetos.dao.AcaoDAO"%>
-<%@page import="br.com.acoesprojetos.model.Acao"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -24,7 +21,8 @@
 	<div id="wrapper">
 		<jsp:include page="templates/menuSuperior.jsp"></jsp:include>
 		<jsp:include page="templates/menuLateral.jsp"></jsp:include>
-		<!-- /. NAV SIDE  -->
+		
+		
 		<div id="page-wrapper">
 			<div id="page-inner">
 				<div class="row">
@@ -36,7 +34,7 @@
 				<section>
 
 
-					<div class="col-md-8 col-sm-12 col-xs-12">
+					<div class="col-xs-12">
 
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -45,90 +43,40 @@
 									Ação</a>
 							</div>
 
-							<%
-								AcaoDAO acaoDAO = new AcaoDAO();
-							%>
 							<div class="panel-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover">
 										<thead>
 											<tr>
-												<th>S No.</th>
+												<th>Codigo.</th>
 												<th>Ação</th>
+												<th>Descrição</th>
 												<th>Quatidade</th>
 												<th>Valor Total</th>
 												<th colspan="3" style="text-align: center;">Operações</th>
 											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="acao" items="${acaoDAO.getLista()}">
+											<c:forEach var="acao" items="${acoes}">
 												<tr>
+													<td>${acao.id}</td>
 													<td>${acao.nome}</td>
-													<td>${acao.email}</td>
-													<td>${acao.endereco}</td>
+													<td>${acao.descricao}</td>
+                                                    <td>${acao.quantidade}</td>
+                                                    <td>${acao.preco}</td>
+                                                    <td><a href="investimento?opcao=listar&codAcao=${acao.id }" 
+                                                        class="btn btn-success center-block">
+                                                        <i class="fa fa-money"></i>
+                                                        Investimentos</a></td>
+                                                    <td><a href="acao?opcao=carregarEditar&codAcao=${acao.id }"
+                                                        class="btn btn-primary center-block" >
+                                                        <i class="fa fa-edit "></i>
+                                                        </a></td>
+                                                    <td><a href="acao?opcao=excluirr&codAcao=${acao.id }"
+                                                         class="btn btn-danger center-block">
+                                                        <i class="fa fa-times"></i>
+                                                        </a></td>
 											</c:forEach>
-									</table>
-								</div>
-							</div>
-
-
-
-							<div class="panel-body">
-								<div class="table-responsive">
-									<table class="table table-striped table-bordered table-hover">
-										<thead>
-											<tr>
-												<th>S No.</th>
-												<th>Ação</th>
-												<th>Quatidade</th>
-												<th>Valor Total</th>
-												<th colspan="3" style="text-align: center;">Operações</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Ibovespa</td>
-												<td>5</td>
-												<td>R$700</td>
-												<td><a href="cadastrarInvestimento.jsp"
-													class="btn btn-success">Investir</a></td>
-												<td><button class="btn btn-primary">
-														<i class="fa fa-edit "></i> Edit
-													</button></td>
-												<td><button class="btn btn-danger">
-														<i class="fa fa-pencil"></i> Delete
-													</button></td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Petrobrás</td>
-												<td>2</td>
-												<td>R$500</td>
-												<td><a href="cadastrarInvestimento.jsp"
-													class="btn btn-success">Investir</a></td>
-												<td><button class="btn btn-primary">
-														<i class="fa fa-edit "></i> Edit
-													</button></td>
-												<td><button class="btn btn-danger">
-														<i class="fa fa-pencil"></i> Delete
-													</button></td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>Caixa</td>
-												<td>4</td>
-												<td>R$300</td>
-												<td><a href="cadastrarInvestimento.jsp"
-													class="btn btn-success">Investir</a></td>
-												<td><button class="btn btn-primary">
-														<i class="fa fa-edit "></i> Edit
-													</button></td>
-												<td><button class="btn btn-danger">
-														<i class="fa fa-pencil"></i> Delete
-													</button></td>
-											</tr>
-										</tbody>
 									</table>
 								</div>
 							</div>
