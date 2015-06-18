@@ -12,13 +12,8 @@ public class ProjetoService {
 
 	public void salvar(String nome, String inicioS, String status)
 			throws ParseException {
-		Date inicio;
-		try {
-			DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-			inicio = (java.util.Date) formatter.parse(inicioS);
-		} catch (ParseException e) {
-			throw e;
-		}
+		DateFormat formatter = new SimpleDateFormat("MM/dd/yy");
+		Date inicio = (Date) formatter.parse(inicioS);
 
 		Projeto projeto = new Projeto();
 		projeto.setNome(nome);

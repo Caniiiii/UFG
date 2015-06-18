@@ -27,7 +27,7 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h1 class="page-header">Minhas Ações</h1>
+						<h1 class="page-header">Meus Investimentos</h1>
 					</div>
 				</div>
 
@@ -39,8 +39,7 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 
-								<a href="cadastrarAcao.jsp" class="btn btn-primary">Nova
-									Ação</a>
+								<a href="cadastrarAcao.jsp" class="btn btn-primary">Novo investimento</a>
 							</div>
 
 							<div class="panel-body">
@@ -48,31 +47,31 @@
 									<table class="table table-striped table-bordered table-hover">
 										<thead>
 											<tr>
-												<th>Codigo.</th>
-												<th>Ação</th>
-												<th>Descrição</th>
+												<th>Codigo</th>
+												<th>Nome</th>
+												<th>Data</th>
 												<th>Quatidade</th>
-												<th>Valor Total</th>
+												<th>Valor</th>
+												<th>Custos</th>
+												<th>Total</th>
 												<th colspan="3" style="text-align: center;">Operações</th>
 											</tr>
 										</thead>
 										<tbody>
-											<c:forEach var="acao" items="${acoes}">
+											<c:forEach var="investimento" items="${investimentos}">
 												<tr>
-													<td>${acao.id}</td>
-													<td>${acao.nome}</td>
-													<td>${acao.descricao}</td>
-                                                    <td>${acao.quantidade}</td>
-                                                    <td>${acao.preco}</td>
-                                                    <td><a href="investimento?opcao=listar&codAcao=${acao.id }" 
-                                                        class="btn btn-success center-block">
-                                                        <i class="fa fa-money"></i>
-                                                        Investimentos</a></td>
-                                                    <td><a href="acao?opcao=editar&codAcao=${acao.id}"
+													<td>${investimento.id}</td>
+													<td>${investimento.nome}</td>
+													<td>${investimento.data}</td>
+                                                    <td>${investimento.quantidade}</td>
+                                                    <td>${investimento.valor}</td>
+                                                    <td>${investimento.custos}</td>
+                                                    <td>${investimento.total}</td>
+                                                    <td><a href="investimento?opcao=editar&codInvestimento=${investimento.id}"
                                                         class="btn btn-primary center-block" >
                                                         <i class="fa fa-edit "></i>
                                                         </a></td>
-                                                    <td><a href="acao?opcao=excluir&codAcao=${acao.id }"
+                                                    <td><a href="investimento?opcao=excluir&codInvestimento=${investimento.id }"
                                                          class="btn btn-danger center-block">
                                                         <i class="fa fa-times"></i>
                                                         </a></td>

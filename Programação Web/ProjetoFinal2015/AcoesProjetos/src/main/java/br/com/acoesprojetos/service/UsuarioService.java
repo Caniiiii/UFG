@@ -1,30 +1,31 @@
 package br.com.acoesprojetos.service;
 
+import java.util.List;
+
 import br.com.acoesprojetos.dao.UsuarioDAO;
 import br.com.acoesprojetos.model.Usuario;
 
 public class UsuarioService {
-	
-	public void salvar(String nome, String login, String senha, String email){
-		Usuario usuario = new Usuario();
-		usuario.setNome(nome);
-		usuario.setLogin(login);
-		usuario.setSenha(senha);
-		usuario.setEmail(email);
-		
+	UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+	public void salvar(Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.inserir(usuario);
 	}
-	
-	public void editar(){
-		
+
+	public void editar() {
+
 	}
-	
-	public void listar(){
-		
+
+	public List<Usuario> listar() {
+		return usuarioDAO.getLista();
 	}
-	
-	public void excluir(){
-		
+
+	public Usuario buscarPorId(int id) {
+		return usuarioDAO.findById(id);
+	}
+
+	public void excluir() {
+
 	}
 }

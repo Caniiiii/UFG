@@ -8,7 +8,8 @@ import br.com.acoesprojetos.dao.UsuarioDAO;
 import br.com.acoesprojetos.model.Acao;
 
 public class AcaoDAOTest {
-
+	
+	@Ignore
 	@Test
 	public void salvar() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -21,7 +22,6 @@ public class AcaoDAOTest {
 		acaoDAO.inserir(acao);
 	}
 
-	@Ignore
 	@Test
 	public void listar() {
 		AcaoDAO dao = new AcaoDAO();
@@ -48,7 +48,7 @@ public class AcaoDAOTest {
 		AcaoDAO acaoDAO = new AcaoDAO();
 		Acao acao = new Acao();
 
-		acao.setNome("IBM");
+		acao.setNome("IBM alterado");
 		acaoDAO.atualizar(acao);
 	}
 }

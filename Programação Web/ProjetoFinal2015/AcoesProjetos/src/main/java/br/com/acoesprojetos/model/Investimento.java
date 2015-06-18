@@ -22,7 +22,6 @@ import javax.persistence.TemporalType;
 		@NamedQuery(name = "Investimento.listarporAcao", query = "SELECT i FROM Investimento i WHERE i.acao = :acao_id "),
 		@NamedQuery(name = "Investimento.buscarPorCodigo", query = "SELECT investimento FROM Investimento investimento WHERE investimento.id = :id") })
 public class Investimento {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "inv_id")
@@ -32,9 +31,6 @@ public class Investimento {
 	@JoinColumn(name = "inv_aco_id", referencedColumnName = "aco_id")
 	private Acao acao;
 
-	@Column(name = "inv_nome", length = 60, nullable = false)
-	private String nome;
-	
 	@Column(name = "inv_data")
 	@Temporal(value = TemporalType.DATE)
 	private Date data;

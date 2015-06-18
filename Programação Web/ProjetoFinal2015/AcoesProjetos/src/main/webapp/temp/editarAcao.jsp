@@ -37,34 +37,37 @@
 									<div class="col-lg-6">
 										<form role="form" method="post" action="acao">
 											<div class="form-group">
-												<label>Nome da ação</label> 
-												<input class="form-control" name="nome">
+												<label>ID da ação</label> 
+												${p.id}<input class="form-control" type="hidden"
+													name="id" value="${p.id}">
 											</div>
 											<div class="form-group">
-												<label>Tipo de ação</label> <select class="form-control"
-													name="descricao">
-													<option value="ON">ON</option>
+												<label>Nome da ação</label> <input class="form-control"
+													name="nome" value="${p.nome}">
+											</div>
+											<div class="form-group">
+												<label>Tipo de ação</label> 
+												<select class="form-control" name="descricao">
+													<option value="${p.descricao}">ON</option>
 													<!-- Ordinária nominativa -->
-													<option value="PN">PN</option>
+													<option value="${p.descricao}">PN</option>
 													<!--  Preferência nominativa -->
 												</select>
 											</div>
 											<div class="form-group">
 												<label>Quantidade</label> <input class="form-control"
-													name="quantidade">
+													name="quantidade" value="${p.quantidade}">
 											</div>
 											<div class="form-group">
 												<label>Valor unitário da ação</label>
 												<div class="form-group input-group">
 													<span class="input-group-addon">$</span> <input type="text"
-														class="form-control" name="valor"> <span
+														class="form-control" name="valor" value="${p.preco}"> <span
 														class="input-group-addon">.00</span>
 												</div>
 											</div>
 											<button type="submit" class="btn btn-default" name="opcao"
-												value="inserir">Cadastrar Ação</button>
-											<button type="submit" class="btn btn-default" name="opcao"
-												value="editar">Editar Ação</button>
+												value="carregarEdicao">Editar Ação</button>
 										</form>
 									</div>
 								</div>

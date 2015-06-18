@@ -10,12 +10,13 @@ import br.com.acoesprojetos.model.Usuario;
 
 public class UsuarioDAOTest {
 	
+	@Ignore
 	@Test
 	public void salvar() {
 		Usuario user1 = new Usuario();
 		user1.setNome("Michel Ferreira2");
-		user1.setEmail("michel@gmail.com");
-		user1.setLogin("michellogin");
+		user1.setEmail("michelin@gmail.com");
+		user1.setLogin("michellogino");
 		user1.setDataNasc(new Date());
 		user1.setSenha("123456789");
 
@@ -24,8 +25,8 @@ public class UsuarioDAOTest {
 		dao.inserir(user1);
 		System.out.println("salvou");
 	}
-
-	@Ignore
+	
+	
 	@Test
 	public void listar() {
 		UsuarioDAO dao = new UsuarioDAO();

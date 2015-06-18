@@ -32,22 +32,25 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="../temp/index.jsp" autocomplete="on"> 
+                            <form action="cadastroUsuario" autocomplete="on" method="post"> 
+                            <script type="text/javascript">
+                            	alert(${messagem});
+                            </script>
                                 <h1>Login</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" >Email ou username</label>
-                                    <input id="username" name="username"  type="text" placeholder="meuusername ou meumail@mail.com"/>
+                                    <input id="username" name="login_usuario"  type="text" placeholder="meuusername ou meumail@mail.com"/>
                                 </p>
                                 <p> 
                                     <label for="password" class="youpasswd" data-icon="p">Senha</label>
-                                    <input id="password" name="password"  type="password" /> 
+                                    <input id="password" name=""  type="password" name="login_senha"/> 
                                 </p>
                                 <p class="keeplogin"> 
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<label for="loginkeeping">Continue me conectado</label>
 								</p>
                                 <p class="login button"> 
-                                    <input type="submit" value="Entrar" /> 
+                                    <input type="submit" name="cadastro" value="Entrar" /> 
 								</p>
                                 <p class="change_link">
 									Não é membro ainda ?
