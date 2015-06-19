@@ -3,9 +3,7 @@ package br.com.acoesprojetos.controller;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,30 +12,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.acoesprojetos.dao.InvestimentoDAO;
+import br.com.acoesprojetos.model.Acao;
 import br.com.acoesprojetos.model.Investimento;
 import br.com.acoesprojetos.service.AcaoService;
 import br.com.acoesprojetos.service.InvestimentoService;
 
+/**
+ * Servlet implementation class InvestimentoServlet
+ */
 @WebServlet(name = "InvestimentoServlet", urlPatterns = "/temp/investimento")
 public class InvestimentoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 
-	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		InvestimentoService investimentoService = new InvestimentoService();
+		AcaoService acaoService = new AcaoService();
 
 		try {
 			String opcao = req.getParameter("opcao");
+			System.out.println(opcao);
 
 			if (opcao == null || opcao.equals("")) {
-				req.getRequestDispatcher("/temp/investimento?opcao=listar")
+				req.getRequestDispatcher("/temp/investimentos.jsp")
 						.forward(req, resp);
 			} else if (opcao.equals("listar")) {
-				List<Investimento> investimentos = new ArrayList<Investimento>();
-				investimentos = investimentoService.listar();
-				req.setAttribute("investimentos", investimentos);
+				Acao acao = acaoService.buscaId(Integer.valueOf(req.getParameter("codAcao")));
+				req.setAttribute("acao", acao);
+				req.setAttribute("investimentos", investimentoService.buscaListaPorAcao(acao));
 			} else if (opcao.equals("inserir")) {
 				Investimento investimento = new Investimento();
 				DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -53,7 +58,7 @@ public class InvestimentoServlet extends HttpServlet {
 				investimento.setTotal(Double.parseDouble(req
 						.getParameter("total")));
 
-				AcaoService acaoService = new AcaoService();
+				
 				int codAcao = Integer.valueOf(req.getParameter("codAcao"));
 				investimento.setAcao(acaoService.buscaId(codAcao));
 
@@ -93,7 +98,6 @@ public class InvestimentoServlet extends HttpServlet {
 				investimento.setTotal(Double.parseDouble(req
 						.getParameter("total")));
 
-				AcaoService acaoService = new AcaoService();
 				int codAcao = Integer.valueOf(req.getParameter("codAcao"));
 				investimento.setAcao(acaoService.buscaId(codAcao));
 
@@ -106,10 +110,12 @@ public class InvestimentoServlet extends HttpServlet {
 				req.getRequestDispatcher("/temp/index.jsp").forward(req, resp);
 			}
 
-			req.getRequestDispatcher("/temp/investimento?opcao=listar")
+			req.getRequestDispatcher("/temp/investimentos.jsp")
 					.forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }
+

@@ -3,6 +3,7 @@ package br.com.acoesprojetos.service;
 import java.util.List;
 
 import br.com.acoesprojetos.dao.InvestimentoDAO;
+import br.com.acoesprojetos.model.Acao;
 import br.com.acoesprojetos.model.Investimento;
 
 // TODO: Auto-generated Javadoc
@@ -72,5 +73,15 @@ public class InvestimentoService {
 	 */
 	public Investimento buscaId(int id) {
 		return dao.findById(id);
+	}
+	
+	/**
+	 * Busca lista por acao.
+	 *
+	 * @param acao the acao
+	 * @return the list
+	 */
+	public List<Investimento> buscaListaPorAcao(Acao acao) {
+		return dao.buscaListaPorAcao(acao);
 	}
 }
