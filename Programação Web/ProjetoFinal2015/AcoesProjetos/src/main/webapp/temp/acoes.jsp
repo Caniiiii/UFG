@@ -64,7 +64,7 @@
 													<td>${acao.descricao}</td>
                                                     <td>${acao.quantidade}</td>
                                                     <td>${acao.preco}</td>
-                                                    <td><a href="investimento?opcao=listar&codAcao=${acao.id }" 
+                                                    <td><a href="investimento?opcao=listar&codAcao=${acao.id}" 
                                                         class="btn btn-success center-block">
                                                         <i class="fa fa-money"></i>
                                                         Investimentos</a></td>

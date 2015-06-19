@@ -9,6 +9,9 @@
                     <li>
                         <a href="acao?opcao=listar"><i class="fa fa-bar-chart-o"></i> Ações</a>
                     </li>
+                    <li>
+                        <a href="investimento?opcao=listar"><i class="fa fa-bar-chart-o"></i> Investimento</a>
+                    </li>
 					<li>
                         <a href="projetos.jsp?opcao=listar"><i class="fa fa-table"></i> Projetos</a>
                     </li>

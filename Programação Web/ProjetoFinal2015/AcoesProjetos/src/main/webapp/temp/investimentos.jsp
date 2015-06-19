@@ -29,6 +29,9 @@
 					<div class="col-md-12">
 						<h1 class="page-header">Meus Investimentos</h1>
 					</div>
+					<div class="col-md-12">
+                        <h2 class="page-header">${acao.nome }</h2>
+                    </div>
 				</div>
 
 				<section>
