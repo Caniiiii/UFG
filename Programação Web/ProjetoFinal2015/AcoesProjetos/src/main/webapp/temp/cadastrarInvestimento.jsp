@@ -40,7 +40,7 @@
 												<label>Codigo</label> 
 												<input class="form-control" name="id"/>
 												<label>Data</label>
-												<input class="form-control" name="data"/> 
+												<input class="form-control" name="data" type="date"/> 
 												<label>Quantidade</label>
 												<input class="form-control" name="quantidade"/> 
 												<label>Valor</label> 
@@ -48,12 +48,11 @@
 												<label>Custos</label> 
 												<input class="form-control" name="custos"/> 
 												<label>Total</label> 
-												<input class="form-control" name="total" 
-												value="${investimento.valor + investimento.quantidade}">
+												<input class="form-control" name="total"/>
 												<label>Acao</label> 
-												${investimento.acao}
+												<%=request.getParameter("codAcao")%>
 												<input class="form-control" name="acao" type="hidden"
-												value="${investimento.acao}"/> 
+												value="<%=request.getParameter("codAcao")%>"/> 
 												
 											</div>
 											<button type="submit" class="btn btn-default"

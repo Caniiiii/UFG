@@ -38,32 +38,31 @@
 										<form role="form" method="post" action="investimento">
 											<div class="form-group">
 												<label>Codigo</label> 
-												${investimento.id}
-												<input class="form-control" name="id"
-												value="${investimento.id}" type="hidden"/>
+												${p.id}
+												<input class="form-control" name="id" type="hidden"
+												value="${p.id}"/>
 												<label>Data</label>
-												<input class="form-control" name="data"
-												value="${investimento.data}"/> 
+												<input class="form-control" name="data" type="date"
+												value="${p.data}"/> 
 												<label>Quantidade</label>
 												<input class="form-control" name="quantidade"
-												value="${investimento.quantidade}"/> 
+												value="${p.quantidade}"/> 
 												<label>Valor</label> 
 												<input class="form-control" name="valor"
-												value="${investimento.valor}"/> 
+												value="${p.valor}"/> 
 												<label>Custos</label> 
 												<input class="form-control" name="custos"
-												value="${investimento.custos}"/> 
+												value="${p.custos}"/> 
 												<label>Total</label> 
-												<input class="form-control" name="total" 
-												value="${investimento.valor + investimento.quantidade}">
+												<input class="form-control" name="total"
+												value="${p.total}"/>
 												<label>Acao</label> 
-												${investimento.acao}
-												<input class="form-control" name="acao" type="hidden"
-												value="${investimento.acao}"/> 
+												<input class="form-control" name="codAcao"
+												value="${p.acao.id}"/> 
 												
 											</div>
 											<button type="submit" class="btn btn-default"
-											name="opcao" value="editar">Salvar</button>
+											name="opcao" value="carregarEdicao">Editar Investimento</button>
 										</form>
 									</div>
 									<!-- /.col-lg-6 (nested) -->

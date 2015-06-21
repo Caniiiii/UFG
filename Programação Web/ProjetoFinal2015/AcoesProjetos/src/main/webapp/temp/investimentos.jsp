@@ -30,7 +30,7 @@
 						<h1 class="page-header">Meus Investimentos</h1>
 					</div>
 					<div class="col-md-12">
-                        <h2 class="page-header">${acao.nome }</h2>
+                        <h2 class="page-header">${acao.nome}</h2>
                     </div>
 				</div>
 
@@ -42,7 +42,7 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 
-								<a href="cadastrarAcao.jsp" class="btn btn-primary">Novo investimento</a>
+								<a href="cadastrarInvestimento.jsp?codAcao=${acao.id}" class="btn btn-primary">Novo investimento</a>
 							</div>
 
 							<div class="panel-body">

@@ -59,7 +59,7 @@ public class InvestimentoServlet extends HttpServlet {
 						.getParameter("total")));
 
 				
-				int codAcao = Integer.valueOf(req.getParameter("codAcao"));
+				int codAcao = Integer.parseInt(req.getParameter("acao"));
 				investimento.setAcao(acaoService.buscaId(codAcao));
 
 				investimentoService.salvar(investimento);
@@ -98,7 +98,7 @@ public class InvestimentoServlet extends HttpServlet {
 				investimento.setTotal(Double.parseDouble(req
 						.getParameter("total")));
 
-				int codAcao = Integer.valueOf(req.getParameter("codAcao"));
+				int codAcao = Integer.parseInt(req.getParameter("codAcao"));
 				investimento.setAcao(acaoService.buscaId(codAcao));
 
 				investimentoService.editar(investimento);
