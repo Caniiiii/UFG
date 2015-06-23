@@ -37,51 +37,44 @@ public class InvestimentoServlet extends HttpServlet {
 			System.out.println(opcao);
 
 			if (opcao == null || opcao.equals("")) {
-				req.getRequestDispatcher("/temp/investimentos.jsp")
-						.forward(req, resp);
+				req.getRequestDispatcher("/temp/index.jsp").forward(req, resp);
+				
 			} else if (opcao.equals("listar")) {
 				Acao acao = acaoService.buscaId(Integer.valueOf(req.getParameter("codAcao")));
 				req.setAttribute("acao", acao);
 				req.setAttribute("investimentos", investimentoService.buscaListaPorAcao(acao));
+				req.getRequestDispatcher("/temp/investimentos.jsp").forward(req, resp);
+				
 			} else if (opcao.equals("inserir")) {
 				Investimento investimento = new Investimento();
 				DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 				Date data = (Date) formatter.parse(req.getParameter("data"));
 				investimento.setData(data);
 
-				investimento.setQuantidade(Integer.parseInt(req
-						.getParameter("quantidade")));
-				investimento.setValor(Double.parseDouble(req
-						.getParameter("valor")));
-				investimento.setCustos(Double.parseDouble(req
-						.getParameter("custos")));
-				investimento.setTotal(Double.parseDouble(req
-						.getParameter("total")));
-
+				investimento.setQuantidade(Integer.parseInt(req.getParameter("quantidade")));
+				investimento.setValor(Double.parseDouble(req.getParameter("valor")));
+				investimento.setCustos(Double.parseDouble(req.getParameter("custos")));
+				investimento.setTotal(Double.parseDouble(req.getParameter("total")));
 				
 				int codAcao = Integer.parseInt(req.getParameter("acao"));
 				investimento.setAcao(acaoService.buscaId(codAcao));
 
 				investimentoService.salvar(investimento);
 				req.setAttribute("mensagem", "Usuário Cadastrado Com Sucesso");
-				req.getRequestDispatcher("/temp/investimento?opcao=listar")
-						.forward(req, resp);
+				req.getRequestDispatcher("/temp/investimento?opcao=listar&codAcao=" + codAcao).forward(req, resp);
 
 			} else if (opcao.equals("editar")) {
 				InvestimentoDAO investimentoDAO = new InvestimentoDAO();
-				req.setAttribute("p", investimentoDAO.findById(Integer
-						.parseInt(req.getParameter("codInvestimento"))));
-
-				req.getRequestDispatcher("/temp/editarInvestimento.jsp")
-						.forward(req, resp);
+				req.setAttribute("p", investimentoDAO.findById(Integer.parseInt(req.getParameter("codInvestimento"))));
+				req.getRequestDispatcher("/temp/editarInvestimento.jsp").forward(req, resp);
+				
 			} else if (opcao.equals("excluir")) {
-				int codigo = Integer.parseInt(req
-						.getParameter("codInvestimento"));
+				int codigo = Integer.parseInt(req.getParameter("codInvestimento"));
 				investimentoService.excluir(codigo);
-				req.setAttribute("mensagem",
-						"Investimento Excluido Com Sucesso");
-				req.getRequestDispatcher("/temp/investimento?opcao=listar")
-						.forward(req, resp);
+				req.setAttribute("mensagem", "Investimento Excluido Com Sucesso");
+				int codAcao = Integer.parseInt(req.getParameter("acao"));
+				req.getRequestDispatcher("/temp/investimento?opcao=listar&codAcao=" + codAcao).forward(req, resp);
+				
 			} else if (opcao.equals("carregarEdicao")) {
 				Investimento investimento = investimentoService.buscaId(Integer
 						.parseInt(req.getParameter("id")));
@@ -89,31 +82,22 @@ public class InvestimentoServlet extends HttpServlet {
 				Date data = (Date) formatter.parse(req.getParameter("data"));
 				investimento.setData(data);
 
-				investimento.setQuantidade(Integer.parseInt(req
-						.getParameter("quantidade")));
-				investimento.setValor(Double.parseDouble(req
-						.getParameter("valor")));
-				investimento.setCustos(Double.parseDouble(req
-						.getParameter("custos")));
-				investimento.setTotal(Double.parseDouble(req
-						.getParameter("total")));
+				investimento.setQuantidade(Integer.parseInt(req.getParameter("quantidade")));
+				investimento.setValor(Double.parseDouble(req.getParameter("valor")));
+				investimento.setCustos(Double.parseDouble(req.getParameter("custos")));
+				investimento.setTotal(Double.parseDouble(req.getParameter("total")));
 
 				int codAcao = Integer.parseInt(req.getParameter("codAcao"));
 				investimento.setAcao(acaoService.buscaId(codAcao));
 
 				investimentoService.editar(investimento);
 				req.setAttribute("mensagem", "Usuário Cadastrado Com Sucesso");
-				req.getRequestDispatcher("/temp/investimento?opcao=listar")
-						.forward(req, resp);
-			} else {
-				req.setAttribute("mensagem", "Erro na Página");
-				req.getRequestDispatcher("/temp/index.jsp").forward(req, resp);
-			}
-
-			req.getRequestDispatcher("/temp/investimentos.jsp")
-					.forward(req, resp);
+				req.getRequestDispatcher("/temp/investimento?opcao=listar").forward(req, resp);
+				
+			} 
 		} catch (Exception e) {
-			e.printStackTrace();
+			req.setAttribute("mensagem", "Erro na Página");
+			req.getRequestDispatcher("/temp/index.jsp").forward(req, resp);
 		}
 	}
 

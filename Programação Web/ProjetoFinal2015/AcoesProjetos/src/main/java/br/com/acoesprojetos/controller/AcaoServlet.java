@@ -29,12 +29,13 @@ public class AcaoServlet extends HttpServlet {
 			String opcao = req.getParameter("opcao");
 
 			if (opcao == null || opcao.equals("")) {
-				req.getRequestDispatcher("/temp/acao?opcao=listar").forward(
-						req, resp);
+				req.getRequestDispatcher("/temp/acao?opcao=listar").forward(req, resp);
 			} else if (opcao.equals("listar")) {
 				List<Acao> acoes = new ArrayList<Acao>();
 				acoes = acaoService.listar();
 				req.setAttribute("acoes", acoes);
+				req.getRequestDispatcher("/temp/acoes.jsp").forward(
+						req, resp);
 			} else if (opcao.equals("inserir")) {
 				Acao acao = new Acao();
 				acao.setNome(req.getParameter("nome"));
@@ -84,7 +85,6 @@ public class AcaoServlet extends HttpServlet {
 				req.getRequestDispatcher("/temp/index.jsp").forward(req, resp);
 			}
 
-			req.getRequestDispatcher("/temp/acoes.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

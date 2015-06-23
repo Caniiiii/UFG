@@ -51,7 +51,7 @@
 										<thead>
 											<tr>
 												<th>Codigo</th>
-												<th>Nome</th>
+												<th>Nome da Ação</th>
 												<th>Data</th>
 												<th>Quatidade</th>
 												<th>Valor</th>
@@ -64,7 +64,7 @@
 											<c:forEach var="investimento" items="${investimentos}">
 												<tr>
 													<td>${investimento.id}</td>
-													<td>${investimento.nome}</td>
+													<td>${investimento.acao.nome}</td>
 													<td>${investimento.data}</td>
                                                     <td>${investimento.quantidade}</td>
                                                     <td>${investimento.valor}</td>
@@ -74,7 +74,7 @@
                                                         class="btn btn-primary center-block" >
                                                         <i class="fa fa-edit "></i>
                                                         </a></td>
-                                                    <td><a href="investimento?opcao=excluir&codInvestimento=${investimento.id }"
+                                                    <td><a href="investimento?opcao=excluir&codInvestimento=${investimento.id }&codAcao=${acao.id}"
                                                          class="btn btn-danger center-block">
                                                         <i class="fa fa-times"></i>
                                                         </a></td>
