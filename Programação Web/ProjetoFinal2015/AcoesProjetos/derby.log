@@ -1,19 +1,19 @@
 ----------------------------------------------------------------
-Fri Jun 26 11:17:54 BRT 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-014e-303b-6067-000006ddb428 
-on database directory C:\Users\Felipe\git\UFG\Programação Web\ProjetoFinal2015\AcoesProjetos\db1 with class loader WebappClassLoader
+Fri Jun 26 19:13:42 BRT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-014e-31ee-f8a8-000004e356f0 
+on database directory /home/alunoinf/git/UFG/ProgramaÃ§Ã£o Web/ProjetoFinal2015/AcoesProjetos/db1 with class loader WebappClassLoader
   context: /AcoesProjetos
   delegate: false
   repositories:
 ----------> Parent Classloader:
-ClassRealm[plugin>org.apache.tomcat.maven:tomcat7-maven-plugin:2.2, parent: sun.misc.Launcher$AppClassLoader@58644d46]
+ClassRealm[plugin>org.apache.tomcat.maven:tomcat7-maven-plugin:2.2, parent: sun.misc.Launcher$AppClassLoader@713c817]
  
-Loaded from file:/C:/Users/Felipe/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
+Loaded from file:/home/alunoinf/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_25-b18
-user.dir=C:\Users\Felipe\git\UFG\Programação Web\ProjetoFinal2015\AcoesProjetos
-os.name=Windows 8.1
+java.runtime.version=1.7.0_51-b13
+user.dir=/home/alunoinf/git/UFG/ProgramaÃ§Ã£o Web/ProjetoFinal2015/AcoesProjetos
+os.name=Linux
 os.arch=amd64
-os.version=6.3
+os.version=2.6.32-358.el6.x86_64
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

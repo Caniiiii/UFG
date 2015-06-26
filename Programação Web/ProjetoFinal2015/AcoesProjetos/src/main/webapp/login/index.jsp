@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
@@ -13,9 +16,9 @@
         <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
         <meta name="author" content="Codrops" />
         <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="/AcoesProjetos/login/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/AcoesProjetos/login/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/AcoesProjetos/login/css/animate-custom.css" />
     </head>
     <body>
         <div class="container">
@@ -33,10 +36,9 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <form action="cadastroUsuario" autocomplete="on" method="post"> 
-                            <script type="text/javascript">
-                            	alert(${messagem});
-                            </script>
+                            
                                 <h1>Login</h1> 
+                                <p>${mensagem}</p>
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" >Email ou username</label>
                                     <input id="username" name="login_usuario"  type="text" placeholder="meuusername ou meumail@mail.com"/>
@@ -50,10 +52,10 @@
 									<label for="loginkeeping">Continue me conectado</label>
 								</p>
                                 <p class="login button"> 
-                                    <input type="submit" name="cadastro" value="entrar" /> 
+                                    <input type="submit" name="opcao" value="entrar" /> 
 								</p>
                                 <p class="change_link">
-									Não é membro ainda ?
+									NÃ£o Ã© membro ainda ?
 									<a href="#toregister" class="to_register">Registre-se</a>
 								</p>
                             </form>
@@ -91,7 +93,7 @@
 									<button name="cadastro" value="salvar">Concluir</button>
 								</p>
                                 <p class="change_link">  
-									Já é um membro ?
+									JÃ¡ Ã© um membro ?
 									<a href="#tologin" class="to_register"> Faca seu Login </a>
 								</p>
                             </form>

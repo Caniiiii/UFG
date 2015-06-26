@@ -15,6 +15,7 @@
 <!-- Google Fonts-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans'
 	rel='stylesheet' type='text/css' />
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -37,7 +38,7 @@
 									<div class="col-lg-6">
 										<form role="form" method="post" action="investimento">
 										
-										<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+										
 											<div class="form-group" ng-app>
 												<label hidden="true">Codigo</label> 
 												<input class="form-control" name="id" type="hidden"/>

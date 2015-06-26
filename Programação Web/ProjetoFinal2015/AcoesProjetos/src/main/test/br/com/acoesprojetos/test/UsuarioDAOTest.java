@@ -10,6 +10,27 @@ import br.com.acoesprojetos.model.Usuario;
 
 public class UsuarioDAOTest {
 	
+	
+	@Test
+	public void autentiacar() {
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario usr = new Usuario();
+		usr.setLogin("feliasdpe");
+		usr.setSenha("123456");
+		
+			usr = dao.autenticar(usr);
+		System.out.println(usr);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Ignore
 	@Test
 	public void salvar() {
@@ -28,6 +49,7 @@ public class UsuarioDAOTest {
 	
 	
 	@Test
+	@Ignore
 	public void listar() {
 		UsuarioDAO dao = new UsuarioDAO();
 		System.out.println(dao.getLista());

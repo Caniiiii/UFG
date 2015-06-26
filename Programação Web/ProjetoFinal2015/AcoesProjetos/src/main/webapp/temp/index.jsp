@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% 
+  if(request.getSession().getAttribute("usuario_logado") == null ) {
+	  response.sendRedirect("/AcoesProjetos/login/index.jsp");
+  }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AçõesProjetos</title>
 	<!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/AcoesProjetos/temp/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="/AcoesProjetos/temp/assets/css/font-awesome.css" rel="stylesheet" />
         <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="/AcoesProjetos/temp/assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>

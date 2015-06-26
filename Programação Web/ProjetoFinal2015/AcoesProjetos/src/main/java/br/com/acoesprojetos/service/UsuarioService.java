@@ -24,8 +24,9 @@ public class UsuarioService {
 	public Usuario buscarPorId(int id) {
 		return usuarioDAO.findById(id);
 	}
-
-	public void excluir() {
-
+	
+	public Usuario autenticar(Usuario usuario) {
+		return usuarioDAO.autenticar(usuario);
 	}
+	
 }
