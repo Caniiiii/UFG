@@ -36,9 +36,10 @@
 								<div class="row">
 									<div class="col-lg-6">
 										<form role="form" method="post" action="investimento">
-											<div class="form-group">
-												<label>Codigo</label> 
-												${p.id}
+											
+											<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+											<div class="form-group" ng-app>
+												<label hidden="true">Codigo</label> 
 												<input class="form-control" name="id" type="hidden"
 												value="${p.id}"/>
 												<label>Data</label>
@@ -46,23 +47,26 @@
 												value="${p.data}"/> 
 												<label>Quantidade</label>
 												<input class="form-control" name="quantidade"
-												value="${p.quantidade}"/> 
+												value="${p.quantidade}" ng-model="quantidad"/> 
 												<label>Valor</label> 
 												<input class="form-control" name="valor"
-												value="${p.valor}"/> 
+												value="${p.valor}" ng-model="value"/> 
 												<label>Custos</label> 
 												<input class="form-control" name="custos"
-												value="${p.custos}"/> 
+												value="${p.custos}" ng-model="custo"/> 
 												<label>Total</label> 
 												<input class="form-control" name="total"
-												value="${p.total}"/>
+												value="${p.total}" ng-value="quantidad*value-custo"
+												readonly="readonly"/>
 												<label>Acao</label> 
 												<input class="form-control" name="codAcao"
-												value="${p.acao.id}"/> 
+												value="${p.acao.id}" readonly="readonly"/> 
 												
 											</div>
 											<button type="submit" class="btn btn-default"
 											name="opcao" value="carregarEdicao">Editar Investimento</button>
+											<button type="submit" class="btn btn-default"
+											name="opcao" value="voltar">Voltar</button>
 										</form>
 									</div>
 									<!-- /.col-lg-6 (nested) -->

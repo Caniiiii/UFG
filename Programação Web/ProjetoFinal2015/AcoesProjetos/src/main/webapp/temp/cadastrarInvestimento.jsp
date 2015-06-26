@@ -36,19 +36,21 @@
 								<div class="row">
 									<div class="col-lg-6">
 										<form role="form" method="post" action="investimento">
-											<div class="form-group">
-												<label>Codigo</label> 
-												<input class="form-control" name="id"/>
+										
+										<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+											<div class="form-group" ng-app>
+												<label hidden="true">Codigo</label> 
+												<input class="form-control" name="id" type="hidden"/>
 												<label>Data</label>
 												<input class="form-control" name="data" type="date"/> 
 												<label>Quantidade</label>
-												<input class="form-control" name="quantidade"/> 
+												<input class="form-control" name="quantidade" ng-model="quantidade"/> 
 												<label>Valor</label> 
-												<input class="form-control" name="valor"/> 
+												<input class="form-control" name="valor" ng-model="valor"/> 
 												<label>Custos</label> 
-												<input class="form-control" name="custos"/> 
+												<input class="form-control" name="custos" ng-model="custos"/> 
 												<label>Total</label> 
-												<input class="form-control" name="total"/>
+												<input class="form-control" name="total" ng-value="quantidade*valor-custos" readonly="readonly"/>
 												<label>Acao</label> 
 												<%=request.getParameter("codAcao")%>
 												<input class="form-control" name="acao" type="hidden"

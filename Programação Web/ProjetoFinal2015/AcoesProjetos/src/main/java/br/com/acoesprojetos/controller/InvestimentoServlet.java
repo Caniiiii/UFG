@@ -94,7 +94,8 @@ public class InvestimentoServlet extends HttpServlet {
 				req.setAttribute("mensagem", "Usuário Cadastrado Com Sucesso");
 				req.getRequestDispatcher("/temp/investimento?opcao=listar").forward(req, resp);
 				
-			} 
+			} else{
+				req.getRequestDispatcher("/temp/investimento?opcao=listar").forward(req, resp);			}
 		} catch (Exception e) {
 			req.setAttribute("mensagem", "Erro na Página");
 			req.getRequestDispatcher("/temp/index.jsp").forward(req, resp);

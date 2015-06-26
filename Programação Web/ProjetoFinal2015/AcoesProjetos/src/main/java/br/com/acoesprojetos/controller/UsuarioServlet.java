@@ -28,29 +28,38 @@ public class UsuarioServlet extends HttpServlet {
 			String operacao = req.getParameter("cadastro");
 			UsuarioService usuarioService = new UsuarioService();
 
-			if (operacao.equals("Entrar")) {
+			if (operacao.equals("entrar")) {
+
 				String login = req.getParameter("login_usuario");
 				String senha = req.getParameter("login_senha");
 
-				Usuario usuario = new Usuario();
-				List<Usuario> listaDeUsuarios = usuarioService.listar();
-				boolean usuarioValido = false;
+				if (login.equals(null) || senha.equals(null)) {
+					req.getRequestDispatcher("/login/index.html").forward(req,
+							resp);
+				} else {
 
-				for (int i = 0; i < listaDeUsuarios.size(); i++) {
-					usuario = usuarioService.buscarPorId(i);
-					if (usuario.getLogin().equals(login)
-							&& usuario.getSenha().equals(senha)) {
-						HttpSession session = req.getSession();
-						session.setAttribute("usuario_logado", usuario);
-						usuarioValido = true;
-						req.getRequestDispatcher("/temp/index.jsp").forward(
-								req, resp);
-						break;
+					Usuario usuario = new Usuario();
+					List<Usuario> listaDeUsuarios = usuarioService.listar();
+					boolean usuarioValido = false;
+
+					for (int i = 0; i < listaDeUsuarios.size(); i++) {
+						usuario = usuarioService.buscarPorId(i);
+						if (usuario.getLogin().equals(login)
+								&& usuario.getSenha().equals(senha)) {
+							HttpSession session = req.getSession();
+							session.setAttribute("usuario_logado", usuario);
+							usuarioValido = true;
+							req.getRequestDispatcher("/temp/acao?opcao=listar")
+									.forward(req, resp);
+							break;
+						}
 					}
-				}
-
-				if (!usuarioValido) {
-					req.setAttribute("mensagem", "Usuário ou Senha Invalidos");
+					if (!usuarioValido) {
+						req.setAttribute("mensagem", "Usuário ou Senha Invalidos");
+						req.getRequestDispatcher("/login/index.html").forward(req,
+								resp);
+					}
+					
 				}
 			} else if (operacao.equals("salvar")) {
 				Usuario usuario = new Usuario();
@@ -58,14 +67,16 @@ public class UsuarioServlet extends HttpServlet {
 				usuario.setLogin(req.getParameter("login"));
 				usuario.setSenha(req.getParameter("senha"));
 				usuario.setEmail(req.getParameter("mail"));
-				
+
 				DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-				Date inicio = (Date) formatter.parse(req.getParameter("nascimento"));
+				Date inicio = (Date) formatter.parse(req
+						.getParameter("nascimento"));
 				usuario.setDataNasc(inicio);
 
 				usuarioService.salvar(usuario);
 				req.setAttribute("mensagem", "Usuário Cadastrado Com Sucesso");
-				req.getRequestDispatcher("/login/index.html").forward(req, resp);
+				req.getRequestDispatcher("/login/index.html")
+						.forward(req, resp);
 			} else {
 				req.setAttribute("mensagem", "Erro na Página");
 				req.getRequestDispatcher("/temp/index.jsp").forward(req, resp);
