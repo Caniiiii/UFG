@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
@@ -18,7 +18,7 @@
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="/AcoesProjetos/login/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="/AcoesProjetos/login/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/AcoesProjetos/login/css/animate-custom.css" />
+        <link rel="stylesheet" type="text/css" href="/AcoesProjetos/login/css/animate-custom.css" />
     </head>
     <body>
         <div class="container">
@@ -26,9 +26,9 @@
            
             <header>
                 <h1>Faca seu login para comecar</h1>
-				
+                
             </header>
-            <section>				
+            <section>               
                 <div id="container_demo" >
                     <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
                     <a class="hiddenanchor" id="toregister"></a>
@@ -48,16 +48,16 @@
                                     <input id="password" name="login_senha" type="password" /> 
                                 </p>
                                 <p class="keeplogin"> 
-									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-									<label for="loginkeeping">Continue me conectado</label>
-								</p>
+                                    <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+                                    <label for="loginkeeping">Continue me conectado</label>
+                                </p>
                                 <p class="login button"> 
                                     <input type="submit" name="opcao" value="entrar" /> 
-								</p>
+                                </p>
                                 <p class="change_link">
-									NÃ£o Ã© membro ainda ?
-									<a href="#toregister" class="to_register">Registre-se</a>
-								</p>
+                                    Não é membro ainda ?
+                                    <a href="#toregister" class="to_register">Registre-se</a>
+                                </p>
                             </form>
                         </div>
 
@@ -88,17 +88,17 @@
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Porfavor repita a senha </label>
                                     <input id="passwordsignup_confirm" name="senha_conf" required="required" type="password" />
                                 </p>
-                                <p class="signin button"> 
-									<input type="submit" value="Concluir" name="salvar"/> 
-									<button name="cadastro" value="salvar">Concluir</button>
-								</p>
+                                <p class="signin button">
+                                     <input name="opcao" value="salvar" type="hidden"/>
+                                    <input type="submit" name="salvar"/> 
+                                </p>
                                 <p class="change_link">  
-									JÃ¡ Ã© um membro ?
-									<a href="#tologin" class="to_register"> Faca seu Login </a>
-								</p>
+                                    Já é um membro ?
+                                    <a href="#tologin" class="to_register"> Faca seu Login </a>
+                                </p>
                             </form>
                         </div>
-						
+                        
                     </div>
                 </div>  
             </section>

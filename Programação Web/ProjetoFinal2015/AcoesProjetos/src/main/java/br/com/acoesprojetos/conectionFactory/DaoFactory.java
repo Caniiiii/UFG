@@ -5,7 +5,6 @@ import javax.persistence.Persistence;
 
 import br.com.acoesprojetos.dao.AcaoDAO;
 import br.com.acoesprojetos.dao.InvestimentoDAO;
-import br.com.acoesprojetos.dao.ProjetoDAO;
 import br.com.acoesprojetos.dao.UsuarioDAO;
 
 public final class DaoFactory {
@@ -16,7 +15,6 @@ public final class DaoFactory {
 	
 	private static AcaoDAO acaoDao;
 	private static InvestimentoDAO investimentoDao;
-	private static ProjetoDAO projetoDao;
 	private static UsuarioDAO usuarioDao;
 	
 	private DaoFactory(){}
@@ -41,13 +39,6 @@ public final class DaoFactory {
 			investimentoDao = new InvestimentoDAO();
 		
 		return investimentoDao;
-	}
-	
-	public static ProjetoDAO projetoDaoInstance() {
-		if(projetoDao == null)
-			projetoDao = new ProjetoDAO();
-		
-		return projetoDao;
 	}
 	
 	public static UsuarioDAO usuarioDaoInstance() {

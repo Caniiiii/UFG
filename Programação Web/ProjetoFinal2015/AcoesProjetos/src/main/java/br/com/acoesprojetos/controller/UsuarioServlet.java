@@ -25,6 +25,8 @@ public class UsuarioServlet extends HttpServlet {
 		try {
 			String operacao = req.getParameter("opcao");
 			UsuarioService usuarioService = new UsuarioService();
+			
+			System.out.println("UsuarioServlet Opcao: " + operacao);
 
 			if (operacao.equals("entrar")) {
 
