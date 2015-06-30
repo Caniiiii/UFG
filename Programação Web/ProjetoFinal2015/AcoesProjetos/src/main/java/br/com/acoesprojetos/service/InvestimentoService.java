@@ -50,7 +50,7 @@ public class InvestimentoService {
 		
 		int id = inv.getId();
 		//aqui tem que vir o valor do investimento que está no banco de dados para fazer a subtração
-		 Investimento invest= this.buscaId(id);
+		Investimento invest= this.buscaId(id);
 		
 		Acao acao = acaoService.buscaId(inv.getAcao().getId());
 		acao.somaPreco(inv.getTotal() - invest.getTotal());
