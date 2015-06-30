@@ -51,20 +51,18 @@
 											</div>
 											<div class="form-group">
 												<label>Quantidade</label> <input class="form-control"
-													name="quantidade">
+													name="quantidade" readonly="readonly" value="0">
 											</div>
 											<div class="form-group">
 												<label>Valor unitário da ação</label>
 												<div class="form-group input-group">
 													<span class="input-group-addon">$</span> <input type="text"
-														class="form-control" name="valor"> <span
+														class="form-control" name="valor" readonly="readonly" value="0"> <span
 														class="input-group-addon">.00</span>
 												</div>
 											</div>
 											<button type="submit" class="btn btn-default" name="opcao"
 												value="inserir">Cadastrar Ação</button>
-											<button type="submit" class="btn btn-default" name="opcao"
-												value="editar">Editar Ação</button>
 										</form>
 									</div>
 								</div>

@@ -16,7 +16,8 @@ import javax.persistence.Table;
 @Table(name = "tbl_acao")
 @NamedQueries({
 		@NamedQuery(name = "Acao.listar", query = "SELECT acao FROM Acao acao"),
-		@NamedQuery(name = "Acao.buscarPorCodigo", query = "SELECT acao FROM Acao acao WHERE acao.id = :id") })
+		@NamedQuery(name = "Acao.buscarPorCodigo", query = "SELECT acao FROM Acao acao WHERE acao.id = :id")
+		})
 public class Acao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -85,6 +86,22 @@ public class Acao {
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+
+	public void somaPreco(Double preco) {
+		this.preco += preco;
+	}
+
+	public void subtraiPreco(Double preco) {
+		this.preco -= preco;
+	}
+
+	public void somaQuantidade(int quantidade) {
+		this.quantidade += quantidade;
+	}
+
+	public void subtraiQuantidade(int quantidade) {
+		this.quantidade -= quantidade;
 	}
 
 	@Override
