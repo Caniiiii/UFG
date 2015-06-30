@@ -92,19 +92,15 @@ public class InvestimentoServlet extends HttpServlet {
 						.forward(req, resp);
 
 			} else if (opcao.equals("carregarEdicao")) {
-				Investimento investimento = investimentoService.buscaId(Integer.parseInt(req.getParameter("id")));
+				Investimento investimento = new Investimento();
+				investimento.setId(Integer.parseInt(req.getParameter("id")));
 				DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 				Date data = (Date) formatter.parse(req.getParameter("data"));
 				investimento.setData(data);
-
-				investimento.setQuantidade(Integer.parseInt(req
-						.getParameter("quantidade")));
-				investimento.setValor(Double.parseDouble(req
-						.getParameter("valor")));
-				investimento.setCustos(Double.parseDouble(req
-						.getParameter("custos")));
-				investimento.setTotal(Double.parseDouble(req
-						.getParameter("total")));
+				investimento.setQuantidade(Integer.parseInt(req.getParameter("quantidade")));
+				investimento.setValor(Double.parseDouble(req.getParameter("valor")));
+				investimento.setCustos(Double.parseDouble(req.getParameter("custos")));
+				investimento.setTotal(Double.parseDouble(req.getParameter("total")));
 
 				int codAcao = Integer.parseInt(req.getParameter("codAcao"));
 				investimento.setAcao(acaoService.buscaId(codAcao));

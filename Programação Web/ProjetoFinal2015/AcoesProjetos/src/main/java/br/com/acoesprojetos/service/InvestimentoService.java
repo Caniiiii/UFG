@@ -47,13 +47,14 @@ public class InvestimentoService {
 	 *            the inv
 	 */
 	public void editar(Investimento inv) {
-		Investimento investimento = new Investimento();
+		
+		int id = inv.getId();
 		//aqui tem que vir o valor do investimento que está no banco de dados para fazer a subtração
-		investimento = dao.findById(inv.getId());
+		 Investimento invest= this.buscaId(id);
 		
 		Acao acao = acaoService.buscaId(inv.getAcao().getId());
-		acao.somaPreco(inv.getTotal()-investimento.getTotal());
-		acao.somaQuantidade(inv.getQuantidade()-investimento.getQuantidade());
+		acao.somaPreco(inv.getTotal() - invest.getTotal());
+		acao.somaQuantidade(inv.getQuantidade() - invest.getQuantidade());
 		acaoService.editar(acao);
 		
 		dao.atualizar(inv);
